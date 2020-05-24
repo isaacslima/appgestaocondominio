@@ -4,6 +4,7 @@
       app
       color="primary"
       dark
+      v-if="login"
     >
       <div class="d-flex align-center">
         <v-img
@@ -18,23 +19,16 @@
       </v-app-bar>
 
     <v-content class="teal lighten-5">
-      <Login/>
+      <router-view/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Login from './components/Login';
-
 export default {
   name: 'App',
-
-  components: {
-    Login,
-  },
-
   data: () => ({
-    //
+    login: false
   }),
 };
 </script>
