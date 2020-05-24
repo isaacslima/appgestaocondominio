@@ -14,27 +14,17 @@
             sm="8"
             md="4"
           >
-            <v-card class="elevation-12">
+            <v-card class="elevation-12" tile>
               <v-toolbar
-                color="primary"
-                dark
-                flat
+                color="white"
+                white
+                tile
+                prominent
               >
-                <v-toolbar-title>Login form</v-toolbar-title>
+                <v-toolbar-title>
+                  Villa Bella Pontal
+                  </v-toolbar-title>
                 <v-spacer></v-spacer>
-                <v-tooltip bottom>
-                  <template v-slot:activator="{ on }">
-                    <v-btn
-                      icon
-                      large
-                      target="_blank"
-                      v-on="on"
-                    >
-                      <v-icon>mdi-code-tags</v-icon>
-                    </v-btn>
-                  </template>
-                  <span>Source</span>
-                </v-tooltip>
               </v-toolbar>
               <v-card-text>
                 <v-form>
