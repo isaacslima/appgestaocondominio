@@ -49,7 +49,7 @@
                 </v-form>
               </v-card-text>
               <v-card-actions>
-                <v-btn color="primary" block>Entrar</v-btn>
+                <v-btn color="primary" tile block>Entrar</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
