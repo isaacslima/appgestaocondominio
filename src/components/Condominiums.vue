@@ -1,6 +1,8 @@
 <template>
 <v-container>
-  <v-btn color="accent" to="/cadastrar-condomino">Adicionar Condomino</v-btn>
+  <div class="mb-3">
+    <v-btn color="accent" to="/cadastrar-condomino" tile block>Adicionar Condomino</v-btn>
+  </div>
     <v-content>
       <v-data-table
       :headers="headers"
