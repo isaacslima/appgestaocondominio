@@ -4,6 +4,7 @@
       <v-container
         class="fill-height"
         fluid
+        
       >
         <v-row
           align="center"
@@ -16,20 +17,21 @@
           >
             <v-card class="elevation-12" tile>
               <v-toolbar
+              class="elevation-0"
                 color="white"
                 white
                 tile
                 prominent
               >
-                <v-toolbar-title>
-                  Villa Bella Pontal
-                  </v-toolbar-title>
+              <v-img height="100%" contain src="../assets/logo-villa-bella.jpg"/>
                 <v-spacer></v-spacer>
               </v-toolbar>
               <v-card-text>
                 <v-form>
                   <v-text-field
-                    label="Login"
+                    label="Email ou Telefone"
+                    placeholder="Digite o email ou telefone"
+                    outlined
                     name="login"
                     prepend-icon="person"
                     type="text"
@@ -37,7 +39,9 @@
 
                   <v-text-field
                     id="password"
-                    label="Password"
+                    label="Senha"
+                    placeholder="Digite a senha"
+                    outlined
                     name="password"
                     prepend-icon="lock"
                     type="password"
@@ -45,8 +49,7 @@
                 </v-form>
               </v-card-text>
               <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary">Login</v-btn>
+                <v-btn color="primary" block>Entrar</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -58,59 +61,9 @@
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'Login',
 
     data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader',
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify',
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify',
-        },
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com',
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com',
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuejs.com/vuetify',
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs',
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify',
-        },
-      ],
-      whatsNext: [
-        {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer',
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/layout/pre-defined',
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-        },
-      ],
     }),
   }
 </script>
