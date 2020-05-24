@@ -15,8 +15,7 @@
 </template>
 
 <script>
-import firestore from 'vue-firestore'
-require('firebase/firestore')
+import db from '../firebase/firebaseInit'
 
   export default {
     name: 'Login',
@@ -36,11 +35,19 @@ require('firebase/firestore')
       condominos: [
       ],
     }),
-    mounted () {
-      // Binding Collections
-      this.$binding("condominos", firestore.collection("Condomino"))
-      .then((users) => {
-        console.log(users) // => __ob__: Observer
+    created () {
+      db.collection('condominos').get().then(querySnapshot => {
+        querySnapshot.forEach(doc=> {
+          const data = {
+            'id': doc.id,
+            'nome': doc.data().nome,
+            'email': doc.data().email,
+            'apartamento': doc.data().apartamento,
+            'telefone': doc.data().telefone,
+            'bloco': doc.data().bloco
+          }
+          this.condominos.push(data);
+        })
       })
     }
   }
