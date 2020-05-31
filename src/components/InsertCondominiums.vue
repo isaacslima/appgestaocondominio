@@ -51,7 +51,6 @@
             outlined
           >
           </v-autocomplete>
-
         </v-col>
         <v-col cols="12" sm="6" md="3">
           <v-checkbox
@@ -59,20 +58,19 @@
             :label="`${condomino.proprietario ? 'Proprietário' : 'Inquilino' }`"
           ></v-checkbox>
         </v-col>
-
         <v-col cols="12" sm="6" md="3">
           <v-alert dense type="error" v-if="camposObrigatorios" dismissible>Todos os campos são obrigatórios</v-alert>
         </v-col>
-
-        <v-col cols="6" sm="6" md="3">
-          <v-btn tile large @click="returnPage()">
-            CANCELAR
-          </v-btn>
-        </v-col>
-
+      </v-row>
+      <v-row>
         <v-col cols="6" sm="6" md="3">
            <v-btn color="success" tile large @click="addCondomino()" :disabled="saving">
             GRAVAR
+          </v-btn>
+        </v-col>
+        <v-col cols="6" sm="6" md="3">
+          <v-btn tile large @click="returnPage()">
+            CANCELAR
           </v-btn>
         </v-col>
       </v-row>
