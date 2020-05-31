@@ -78,6 +78,8 @@
 </template>
 
 <script>
+import db from '../firebase/firebaseInit'
+
   export default {
     name: 'Login',
 
@@ -94,8 +96,14 @@
                 return
             }
 
-            
-
+            db.collection("condominos").where("email", "==", this.email)
+            .get()
+            .then(function (querySnapshot){
+                querySnapshot.forEach(function(doc) {
+                    // doc.data() is never undefined for query doc snapshots
+                    console.log(doc.id, " => ", doc.data());
+                });
+            })
             this.alertSenha = false
             
         }
