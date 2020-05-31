@@ -19,7 +19,12 @@ export default new VueRouter({
     {
       path: '/cadastrar-condomino',
       name: 'CadastrarCondomino',
-      component:  () => import(/* webpackChunkName: "Condominos" */"../components/InsertCondominiums")
+      component:  () => import(/* webpackChunkName: "CadastrarCondominos" */"../components/InsertCondominiums")
+    },
+    {
+      path: '/cadastrar',
+      name: 'Cadastrar',
+      component:  () => import(/* webpackChunkName: "Cadastrar" */"../components/SiginUpCondominiums")
     }
   ]
 })
