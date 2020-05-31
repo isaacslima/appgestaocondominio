@@ -30,22 +30,28 @@
           ></v-text-field>
         </v-col>
         <v-col cols="12" sm="6" md="3">
-          <v-text-field
-            label="Bloco"
-            hide-details
+          <v-autocomplete
             v-model="condomino.bloco"
+            :items="blocos"
+            chips
+            small-chips
             placeholder="Digite o bloco"
             outlined
-          ></v-text-field>
+          >
+          </v-autocomplete>
         </v-col>
         <v-col cols="12" sm="6" md="3">
-          <v-text-field
+          <v-autocomplete
             label="Apartamento"
-            hide-details
             v-model="condomino.apartamento"
+            :items="aptos"
+            chips
+            small-chips
             placeholder="Digite o apartamento"
             outlined
-          ></v-text-field>
+          >
+          </v-autocomplete>
+
         </v-col>
         <v-col cols="12" sm="6" md="3">
           <v-checkbox
@@ -94,6 +100,8 @@ export default {
    data: () => ({ 
      saving: false,
      saved: false,
+     blocos: [ 1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 ],
+     aptos: [101, 102, 103, 104, 201,202,203,204],
      condomino: {
       nome: '',
       email: '',
