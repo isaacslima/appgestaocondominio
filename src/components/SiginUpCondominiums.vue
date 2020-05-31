@@ -35,10 +35,14 @@
                     label="Email ou Telefone"
                     placeholder="Digite o email ou telefone"
                     outlined
+                    v-model="email"
                     name="login"
                     prepend-icon="person"
                     type="text"
                   ></v-text-field>
+                  <v-alert v-model="alertSenha" type="error">
+                      Senha não confere.
+                  </v-alert>
 
                   <v-text-field
                     id="password"
@@ -46,12 +50,14 @@
                     placeholder="Digite uma senha"
                     outlined
                     name="password"
+                    v-model="senha"
                     prepend-icon="lock"
                     type="password"
                   ></v-text-field>
                   <v-text-field
                     id="password"
                     label="Senhas"
+                    v-model="repeteSenha"
                     placeholder="Repita a senha"
                     outlined
                     name="password"
@@ -61,7 +67,7 @@
                 </v-form>
               </v-card-text>
               <v-card-actions>
-                <v-btn color="primary" tile block>Entrar</v-btn>
+                <v-btn color="primary" @click="verificarEmail" tile block>Entrar</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -76,6 +82,23 @@
     name: 'Login',
 
     data: () => ({
+        email: '',
+        senha: '',
+        repeteSenha: '',
+        alertSenha: false
     }),
+    methods: {
+        verificarEmail () {
+            if(this.senha !== this.repeteSenha){
+                this.alertSenha = true
+                return
+            }
+
+            
+
+            this.alertSenha = false
+            
+        }
+    }
   }
 </script>
